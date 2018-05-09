@@ -3,4 +3,13 @@
   color: cornflowerblue;
   padding: 16px 32px;
   font-size: 32px;
+  margin-left: 12px;
+}
+.Input {
+  height: 64px;
+  width: 180px;
+  font-size: 32px;
+}
+.Checkbox {
+  margin: 12px 12px;
 }

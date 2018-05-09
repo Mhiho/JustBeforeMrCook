@@ -5,6 +5,11 @@ import AddHimHer from '../../components/AddHimHer/AddHimHer';
 import * as actionTypes from '../../store/actions';
 
 class DropingList extends Component {
+  conditionHandler(pet) {
+    if(pet === 'cat'){
+      return "And She is a SuperHERO!!!"
+    }else {return null;}
+  }
   render() {
     return (
       <div>
@@ -17,9 +22,11 @@ class DropingList extends Component {
           click={() => this.props.onManDown(per.id)}
           name={per.name}
           age={per.age}
+          animal={this.conditionHandler(per.pet)}
         />
       ))
       }
+
       </div>
     )
   }
@@ -33,7 +40,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onAddMan: () => dispatch({type:actionTypes.ADD_MAN}),
+    onAddMan: (name,age,pet) => dispatch({type:actionTypes.ADD_MAN, data: {nam: name, ag: age, superp: pet}}),
     onManDown: (id) => dispatch({type:actionTypes.MAN_DOWN, Id: id})
   }
 }
